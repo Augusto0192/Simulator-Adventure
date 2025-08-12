@@ -1,7 +1,6 @@
 -- Constants
 local ID = "kalandra.start"
 
--- Dependencies
 local Node = require("node")
 local Choice = require("choice")
 
