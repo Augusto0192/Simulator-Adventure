@@ -1,23 +1,34 @@
-local ID = "Start"
+-- Constants
+local ID = "start"
 
-local Node = require("Node")
-local Choice = require("Choice")
+-- Dependencies
+local Node = require("node")
+local Choice = require("choice")
 
+-- Create node
 local node = Node:new(ID) ---@type Node
-node.title = "Comecando uma nova aventura"
-node.description = "Descrição do inicio da aventura"
-node.header = [[insira uma arte 
-                    ascii aqui]]
+node.title = "Uma nova aventura"
+node.description = "Em uma bela manhã ensolarada você acorda e se prepara para embarcar em uma nova aventura, mas uma importante decisão deve ser tomada. Para onde você vai?"
+node.header = [[%{magenta}
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▀█ ▄▀█▀███▀█ ▄▄█ ▄▄▀█▄ ▄█ ██ █ ▄▄▀█ ▄▄████
+█ ▀▀ █ █ ██ ▀ ██ ▄▄█ ██ ██ ██ ██ █ ▀▀▄█ ▄▄████
+█ ██ █▄▄████▄███▄▄▄█▄██▄██▄███▄▄▄█▄█▄▄█▄▄▄████
+██████████████████████████████████████████████
+███ ▄▄▄ ██▄██ ▄▀▄ █ ██ █ ██ ▄▄▀█▄ ▄█▀▄▄▀█ ▄▄▀█
+███▄▄▄▀▀██ ▄█ █▄█ █ ██ █ ██ ▀▀ ██ ██ ██ █ ▀▀▄█
+███ ▀▀▀ █▄▄▄█▄███▄██▄▄▄█▄▄█▄██▄██▄███▄▄██▄█▄▄█
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+]]
 
+-- Create choices
+table.insert(node.choices, Choice:new(
+    "kalandra.start",
+    "Para a praia ensolarada de Kalandra"
+))
+table.insert(node.choices, Choice:new(
+    "nyff.start",
+    "Para as montanhas geladas de Nyff"
+))
 
-table.insert( node.choices, Choice:new( "praia.Start",
-    "Para praia ensolarada",
-    false
-    )
-)
-table.insert( node.choices, Choice:new( "montanha.Start",
-    "Para montanha fria ",
-    false
-    )
-)
---www.asciiart.eu
+return node

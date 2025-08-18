@@ -18,19 +18,19 @@ node.header = [[
 
 -- Create choices
 table.insert(node.choices, Choice:new(
-    "kalandra.tomar_um_sol",
-    "Aproveitar a praia deserta para descansar e pegar um sol."
+    "nyff.start",
+    "Muito quente, quero ir pras montanhas."
 ))
 table.insert(node.choices, Choice:new(
     "kalandra.investigar",
     "Seguir sua intuição e investigar o desaparecimento das pessoas."
 ))
-table.insert(node.choices, Choice:new(
-    "kalandra.mergulho",
-    "Dar um mergulho no mar.",
-    function()
-        return game.medoDoMar ~= true
-    end
-))
+-- table.insert(node.choices, Choice:new(
+--     "kalandra.mergulho",
+--     "Dar um mergulho no mar.",
+--     function()
+--         return game.medoDoMar ~= true
+--     end
+-- ))
 
 return node
