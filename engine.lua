@@ -26,7 +26,9 @@ function Engine:runMainLoop()
 
         -- Limpar o terminal
         utils.clearScreen()
-
+        if node.onEnter then
+            node:onEnter()
+        end
         -- Printar Node
         self:printNode(node)
 

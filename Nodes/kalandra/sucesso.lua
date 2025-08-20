@@ -3,18 +3,17 @@ local ID = "kalandra.sucesso"
 
 -- Dependencies
 local Node = require("node")
-local Choice = require("choice")
-local final_secreto = ""
-if game.snowMan then
-    final_secreto =  [[     __
-                                            _|==|_  
-                                             ('')___/
-                                         >--(`^^')
-                                           (`^'^'`)
-                                           `======' ]]
-else
-    final_secreto = ""
-end
+-- local final_secreto = ""
+-- if _G.game.snowMan==true then
+--     final_secreto =  [[     __
+--                           _|==|_  
+--                            ('')___/
+--                        >--(`^^')
+--                          (`^'^'`)
+--                          `======'   ]]
+-- else
+--     final_secreto = ""
+-- end
 -- Create node
 local node = Node:new(ID) ---@type Node
 node.title = "Sucesso!"
@@ -27,7 +26,22 @@ Você leva o pergaminho até a praia e o grande Kraken surge das profundezas, co
 Com a ajuda do pergaminho, a magia é realizada com sucesso e a criatura aterrorizante retorna para o seu reino, trazendo paz e tranquilidade para a região novamente. Em agradecimento, a líder local oferece a você uma recompensa generosa.
 
 Sua aventura em Kalandra foi cheia de desafios, mas você sobreviveu e conseguiu ajudar a comunidade local. Com um senso de realização e satisfação, você segue em frente para sua próxima aventura, sabendo que suas habilidades e coragem serão necessárias novamente no futuro.
- ]]..final_secreto
+ ]]
+node.onEnter = function (self)
+    self.description = self.description
+    if _G.game.snowMan then
+        self.description = self.description .. [[
+
+     __
+   _|==|_  
+    ('')___/
+ >--(`^^')
+   (`^'^'`)
+   `======'  
+        ]]
+    end
+    
+end
 node.header = [[
 %{      }      %{blue}        %{   }      %{      }  %{    }          %{     }  %{magenta} .''.   %{     }       
 %{      }      %{blue} .''.   %{red}   .  %{      }  %{cyan}    *''*  %{     }  %{magenta}:_\/_:  %{green}   .   

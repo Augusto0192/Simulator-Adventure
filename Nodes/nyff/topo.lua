@@ -26,7 +26,7 @@ table.insert(node.choices, Choice:new(
     "Já que eu estou aqui vou fazer um Boneco de neve, afinal vai que alguem volta para buscar a chave.",
     nil,
     function()
-        game.snowMan = true
+        _G.game.snowMan = true
     end
 
 ))
